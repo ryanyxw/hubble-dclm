@@ -549,6 +549,7 @@ def main():
         tokenizer.bos_token = '<|endoftext|>'
         tokenizer.eos_token = '<|endoftext|>'
         tokenizer.unk_token = '<|endoftext|>'
+        tokenizer.pad_token = ''
     print(tokenizer)
 
     if args.checkpoint is not None:
