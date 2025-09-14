@@ -546,6 +546,10 @@ def main():
             eval_model.resize_token_embeddings(len(tokenizer))
     else:
         tokenizer = AutoTokenizer.from_pretrained(args.tokenizer, trust_remote_code=True, cache_dir=args.hf_cache_dir)
+        tokenizer.bos_token = '<|endoftext|>'
+        tokenizer.eos_token = '<|endoftext|>'
+        tokenizer.unk_token = '<|endoftext|>'
+        tokenizer.pad_token = ''
     print(tokenizer)
 
     if args.checkpoint is not None:
